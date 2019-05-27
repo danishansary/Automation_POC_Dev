@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<head>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;
 display:flex;
@@ -63,7 +64,7 @@ button:hover {
   content: "";
   clear: both;
   display: table;
-} 
+}
 
 /* Change styles for signup button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -72,9 +73,10 @@ button:hover {
   }
 }
 </style>
-<body>
+</head>
 
-<form style="border:1px solid #ccc" action="getFullName()">
+<body>
+<form style="border:1px solid #ccc" >
   <div class="container">
    
     <label for="firstName"><b>First Name</b></label>
@@ -84,7 +86,7 @@ button:hover {
     <input type="text" placeholder="Enter Last Name" id="lastName" pattern="[A-Za-z]+" required="required"/>
 
 	<div class="clearfix" align="center">
-      <button type="submit" class="signupbtn">Submit</button>
+      <button type="button" class="signupbtn" onClick="getFullName()">Submit</button>
     </div>
     
     <label for="fullName"><b>Full Name</b></label>
@@ -92,19 +94,14 @@ button:hover {
     
   </div>
 </form>
+
 <script type="text/javascript">
 	function getFullName() {
-		var mName = document.getElementById("middleName").value;
 		var fullName = "";
-		if(mName==""){
-			fullName += document.getElementById("firstName").value + " "+
+        fullName += document.getElementById("firstName").value + " "+
 			document.getElementById("lastName").value;
-		} else {
-			fullName += document.getElementById("firstName").value + " "+ mName +" "+document.getElementById("lastName").value;
-		}
 		document.getElementById("fullName").value = fullName;
 	}
 </script>
-
 </body>
 </html>

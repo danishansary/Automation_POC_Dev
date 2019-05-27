@@ -15,7 +15,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>demoPoc</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <!--<configuration>
+          <url>http://localhost.com:1234/mymanager</url>
+        </configuration>-->
+      </plugin>
+    </plugins>
   </build>
 </project>
