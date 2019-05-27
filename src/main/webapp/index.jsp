@@ -74,7 +74,7 @@ button:hover {
 </style>
 <body>
 
-<form style="border:1px solid #ccc" action="getFullName()">
+<form style="border:1px solid #ccc" >
   <div class="container">
    
     <label for="firstName"><b>First Name</b></label>
@@ -87,8 +87,8 @@ button:hover {
     <input type="text" placeholder="Enter Last Name" id="lastName" pattern="[A-Za-z]+" required="required"/>
 
 	<div class="clearfix" align="center">
-      <button type="submit" class="signupbtn">Submit</button>
-    </div>
+          <button type="button" class="signupbtn" onClick="getFullName()">Submit</button>
+        </div>
     
     <label for="fullName"><b>Full Name</b></label>
     <input type="text" id="fullName" readonly>
